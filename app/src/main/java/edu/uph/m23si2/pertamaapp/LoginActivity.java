@@ -117,6 +117,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<KotaResponse> call, Response<KotaResponse> response) {
                         if (response.isSuccessful() && response.body() != null) {
+                            namaKota.clear();
                             for (Kota k : response.body().getData()) {
                                 Log.d("Kota", k.getCode() + " - " + k.getName());
                                 namaKota.add(k.getName());
